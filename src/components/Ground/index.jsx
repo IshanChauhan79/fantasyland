@@ -1,5 +1,11 @@
+import { useEffect } from "react";
+import { Color } from "three";
+import { useControls } from "leva";
 // import { RigidBody } from "@react-three/rapier";
-import { PLANE_GEOMETRY_ROAD_1_1 } from "../../Constants/Geometries";
+import Boundary from "./Boundary";
+import RoadTrees from "./RoadTrees";
+import GroundRocks from "./GroundRocks";
+import RandomItems from "./RandomItems";
 import {
   STANDARD_MATERIAL_GRASS,
   STANDARD_MATERIAL_ROAD,
@@ -8,13 +14,7 @@ import {
   GROUND_SCALE,
   ROAD_LENGTH_DISPLACEMENT,
 } from "../../Constants/renderRelated";
-import Boundary from "./Boundary";
-import RoadTrees from "./RoadTrees";
-import GroundRocks from "./GroundRocks";
-import RandomItems from "./RandomItems";
-import { useControls } from "leva";
-import { useEffect } from "react";
-import { Color } from "three";
+import { PLANE_GEOMETRY_ROAD_1_1 } from "../../Constants/Geometries";
 
 const Ground = ({ position = [0, 0, 0], scale = GROUND_SCALE }) => {
   const { grassColor } = useControls("Color", {

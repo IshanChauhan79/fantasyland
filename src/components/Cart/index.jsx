@@ -1,6 +1,6 @@
+import { useEffect } from "react";
 import { useAnimations, useGLTF } from "@react-three/drei";
 import { useControls } from "leva";
-import { useEffect } from "react";
 import { MOVING, RESTING } from "../../Constants/animtions";
 // import { CuboidCollider, RigidBody } from "@react-three/rapier";
 

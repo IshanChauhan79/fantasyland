@@ -1,10 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App.jsx";
-import "./index.css";
 import { Canvas } from "@react-three/fiber";
 import { Leva } from "leva";
-import { Loader } from "@react-three/drei";
+// import { Loader } from "@react-three/drei";
+import App from "./App.jsx";
+import LoadingScreen from "./components/LoadingScreen/index.jsx";
+import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -23,6 +24,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     >
       <App />
     </Canvas>
-    <Loader />
+    {/* <Loader /> */}
+    <LoadingScreen />
   </React.StrictMode>
 );

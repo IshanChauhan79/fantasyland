@@ -1,21 +1,22 @@
+import { Suspense, useRef } from "react";
+import { Vector3 } from "three";
+import { useControls } from "leva";
+import { Perf } from "r3f-perf";
+import { useThree } from "@react-three/fiber";
 import {
   BakeShadows,
   // CameraControls,
   MapControls,
   Sky,
 } from "@react-three/drei";
-import Lights from "./Lights";
-import { Perf } from "r3f-perf";
 // import { Physics } from "@react-three/rapier";
-import Ground from "./components/Ground";
-import { Suspense, useRef } from "react";
+import Lights from "./Lights";
+import GoblinHome from "./components/GoblinHome";
+import Fireflies from "./components/Fireflies";
 import Cart from "./components/Cart";
 import Farm from "./components/Farm";
+import Ground from "./components/Ground";
 import Statue from "./components/Statue";
-import GoblinHome from "./components/GoblinHome";
-import { Vector3 } from "three";
-import { useThree } from "@react-three/fiber";
-import Fireflies from "./components/Fireflies";
 
 export function PanLimits(camera, mapControls) {
   const minPan = new Vector3(-8, 0, -8);
@@ -31,6 +32,9 @@ export function PanLimits(camera, mapControls) {
 const App = () => {
   const orbit = useRef();
   const { camera } = useThree();
+  const { visible: performance } = useControls("Performance Tab", {
+    visible: false,
+  });
 
   // for camera controls boundary
   // useEffect(() => {
@@ -42,7 +46,7 @@ const App = () => {
   return (
     <>
       {/* performance */}
-      <Perf position="top-left" />
+      {performance && <Perf position="top-left" visible={performance} />}
 
       {/* lights for the scene */}
       <Lights />

@@ -1,8 +1,8 @@
 import { useEffect, useMemo, useRef } from "react";
 import { useGLTF, useAnimations } from "@react-three/drei";
-import { useControls } from "leva";
-import { clone } from "three/examples/jsm/utils/SkeletonUtils";
 import { useGraph } from "@react-three/fiber";
+import { clone } from "three/examples/jsm/utils/SkeletonUtils";
+import { useControls } from "leva";
 
 export default function Goblin(props) {
   const group = useRef();

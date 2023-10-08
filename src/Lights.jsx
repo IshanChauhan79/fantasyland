@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { useHelper } from "@react-three/drei";
-import { DirectionalLightHelper } from "three";
+// import { useHelper } from "@react-three/drei";
+// import { DirectionalLightHelper } from "three";
 
 const Lights = () => {
   const [directionalLight, setDirectionalLight] = useState(null);

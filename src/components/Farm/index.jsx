@@ -1,6 +1,6 @@
+import { useEffect } from "react";
 import { useGLTF } from "@react-three/drei";
 // import { RigidBody } from "@react-three/rapier";
-import { useEffect } from "react";
 import Horse from "../Horse";
 import { STANDARD_MATERIAL_ROAD } from "../../Constants/Materials";
 
